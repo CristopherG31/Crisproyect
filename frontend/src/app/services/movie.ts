@@ -41,4 +41,3 @@ export class MovieService {
   }
 
 }
-console.log('API FIX');
