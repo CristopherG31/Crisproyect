@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class MovieService {
 
-  private apiUrl = 'http://127.0.0.1:8000/api/movies';
+  private apiUrl = 'https://crisproyect.onrender.com/api/movies';
 
   constructor(private http: HttpClient) {}
 
