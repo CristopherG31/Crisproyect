@@ -28,4 +28,4 @@ EXPOSE 10000
 
 CMD php artisan serve --host=0.0.0.0 --port=10000
 
-RUN docker-php-ext-install pdo pdo_mysqlRUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install pdo pdo_mysql
