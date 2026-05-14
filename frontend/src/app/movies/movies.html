@@ -1,0 +1,67 @@
+<div class="min-vh-100 d-flex flex-column text-white" style="
+    background-image: url('/img/body.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  ">  
+  <div class="netflix-container">
+
+    <h1 class="title">Catálogo de Películas</h1>
+
+    <div class="movies-grid">
+
+      <div class="movie-card" *ngFor="let movie of movies">
+
+        <img [src]="'http://127.0.0.1:8000/storage/covers/' + movie.cover" alt="cover">
+
+        <div class="movie-info">
+
+          <h2>{{ movie.title }}</h2>
+
+          <p>{{ movie.synopsis }}</p>
+
+          <span>{{ movie.year }}</span>
+          <br>
+          <a class="btn btn-warning" [routerLink]="['/edit', movie.id]">
+
+            Edit
+
+          </a>
+          <button class="btn btn-danger" (click)="deleteMovie(movie.id)">
+
+            Eliminar
+
+          </button>
+          <a [href]="movie.trailer" target="_blank" class="btn btn-danger">
+
+            Ver Trailer
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div>
+      <a routerLink="/add" class="btn btn-secondary mb-3">
+
+        Agregar
+
+      </a><br>
+      <a routerLink="/home" class="btn btn-secondary mb-3">
+
+        Regresar
+
+      </a><br>
+
+    </div>
+  </div>
+  
+  <footer class="bg-dark text-white text-center p-3 mt-auto">
+    <p>Materia: Conceptualización de entornos de desarrollo</p>
+    <p>Nombre: Cristopher Adrián González</p>
+    <p>Código: 207706561</p>
+    <p>Correo: adriangonzalez1.uber@gmail.com</p>
+  </footer>
+</div>

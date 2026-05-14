@@ -1,0 +1,33 @@
+<div class="container mt-4">
+
+    <div class="card p-4 shadow">
+
+        <h2 class="mb-4">Editar película</h2>
+
+        <input type="text" class="form-control mb-3" [(ngModel)]="movie.title">
+
+        <textarea class="form-control mb-3" [(ngModel)]="movie.synopsis">
+    </textarea>
+
+        <input type="number" class="form-control mb-3" [(ngModel)]="movie.year">
+
+        <input type="text" class="form-control mb-3" [(ngModel)]="movie.cover">
+
+        <button class="btn btn-warning" (click)="updateMovie()">
+
+            Actualizar película
+
+        </button>
+
+    </div>
+    <a routerLink="/home" class="btn btn-secondary mb-3">
+
+        Regresar
+
+    </a>
+      <a routerLink="/add" class="btn btn-secondary mb-3">
+
+        Agregar
+
+    </a>
+</div>      
