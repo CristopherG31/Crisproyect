@@ -31,8 +31,5 @@ RUN chown -R www-data:www-data /var/www \
 
 EXPOSE 10000
 
-RUN php artisan config:clear
-RUN php artisan cache:clear
-RUN php artisan config:cache
 
 CMD php artisan serve --host=0.0.0.0 --port=10000
