@@ -1,3 +1,18 @@
+FROM node:20 AS frontend-build
+
+WORKDIR /app/frontend
+
+# copiar package json primero
+COPY frontend/package*.json ./
+
+RUN npm install
+
+# copiar frontend
+COPY frontend .
+
+# build production
+RUN npm run build -- --configuration production
+
 FROM php:8.2-fpm
 
 # Dependencias del sistema
@@ -24,6 +39,8 @@ COPY . .
 
 # 🔥 INSTALAR LARAVEL DEPENDENCIAS (ESTO TE FALTABA)
 RUN composer install --no-interaction --no-dev --optimize-autoloader
+
+COPY --from=frontend-build /app/frontend/dist /var/www/public
 
 # Permisos Laravel
 RUN chown -R www-data:www-data /var/www \
