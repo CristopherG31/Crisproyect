@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 })
 export class MovieService {
 
-  private apiUrl = `https://movies-cris.onrender.com/api/movies`;
+  private apiUrl = `https://movies-bit.onrender.com/api/movies`;
 
   constructor(private http: HttpClient) {}
 
