@@ -41,7 +41,6 @@ COPY . .
 RUN composer install --no-interaction --no-dev --optimize-autoloader
 
 COPY --from=frontend-build /app/frontend/dist /var/www/public
-RUN ng build --configuration production
 
 # Permisos Laravel
 RUN chown -R www-data:www-data /var/www \
